@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Cliente {
     private String nome;
     private String cpf;
-    private String email;
+    String email;
     private String telefone;
     private String cidade;
     private String estado;
