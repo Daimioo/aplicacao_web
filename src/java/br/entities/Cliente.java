@@ -6,6 +6,7 @@
 package br.entities;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  *
@@ -198,5 +199,30 @@ public class Cliente {
 
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
-    }  
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 13 * hash + Objects.hashCode(this.email);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        return true;
+    }
 }
